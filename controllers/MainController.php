@@ -20,7 +20,7 @@ class MainController extends CoreController
 	 */
 	public function getList()
 	{
-			
+		
 		$data = $this->model->findAll();
 		
 		echo $this->render('view.php', ['data' =>$data]);

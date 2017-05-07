@@ -28,9 +28,9 @@
 		{%endfor%}
 		<br>
 	
-     
-   <a href="?/main/form/"><input type="button" value="Или задайте ваш вопрос"></a>
-		
+    <span class="button"> 
+   <a href="?/main/form/"><input id="button" type="button" value="Или задайте ваш вопрос"></a>
+	</span>	
 	</div> <!-- cd-faq-items -->
 	<a href="#0" class="cd-close-panel">Close</a>
 </section> <!-- cd-faq -->

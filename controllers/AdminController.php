@@ -113,11 +113,12 @@ class AdminController extends CoreController{
 	public function getDelete($params)
 	{
 		$session = $this->model->checkLogged();
+		if(!empty($session)){
 		if (isset($params['id']) && is_numeric($params['id'])) {
 			$this->model->deleteAdmin($params['id']);
 		
 				header('Location: ?/admin/user');
-			
+			}
 		}
 	}
 	

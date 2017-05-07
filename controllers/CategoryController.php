@@ -45,12 +45,13 @@ class CategoryController extends CoreController{
 	public function getDelete($params)
 	{
 		$session = $this->model->checkLogged();
+		if(!empty($session)){
 		if (isset($params['cat']) && is_numeric($params['cat'])) {
 
 			$this->model->delCatAndRequest($params['cat']);
 		
 				header('Location: ?/category/list');
-			
+			}	
 		}
 	}
 	

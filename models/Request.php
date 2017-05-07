@@ -13,9 +13,9 @@ class Request extends Model
 	
     $stmt = $this->db->prepare("INSERT INTO request (text, cat_id) VALUES (:text, :cat_id);
                                 INSERT INTO author (name, request_id) VALUES (:name, LAST_INSERT_ID())");
-    $stmt->bindParam('text', $text);
+    $stmt->bindParam('text', $text, \PDO::PARAM_STR);
     $stmt->bindParam('cat_id', $cat_id, \PDO::PARAM_INT );
-    $stmt->bindParam('name', $nameInSession);
+    $stmt->bindParam('name', $nameInSession, \PDO::PARAM_STR);
     $stmt->execute();
     }
 

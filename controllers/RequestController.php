@@ -47,6 +47,7 @@ class RequestController extends CoreController{
     public function getDelete($params)
 	{
 		$session = $this->model->checkLogged();
+		if(!empty($session)){
 		if (isset($params['id']) && is_numeric($params['id'])) {
 
 			$this->model->delRequest($params['id']);
@@ -54,6 +55,7 @@ class RequestController extends CoreController{
 				header('Location: ?/request/entry/cat/'.$params['cat']);
 			
 		}
+	  }
 	}
 	
 	/**
