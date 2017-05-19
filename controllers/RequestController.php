@@ -88,6 +88,10 @@ class RequestController extends CoreController{
 		
 		$updateArray = $post;
 		$id = (int)$params['id'];
+	/**
+	*Проверяем, есть ли для данного вопроса ответ. 
+	 В зависимости от результата добавляем либо редактируем ответ 
+	*/
 		$hasResponse = $this->model->checkResponse($id);
 		if($hasResponse){
 			$this->model->entryUpdate($id, $updateArray);

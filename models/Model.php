@@ -11,8 +11,9 @@ protected $db = null;
 		
 		$this->db = DataBase::getDbConnection();
 	}
-	
-//Получение всех категорий
+	/**	
+	*Получение всех категорий
+	*/
 	public function findAllСategories()
 	{
 		$sth = $this->db->prepare("SELECT * FROM category ORDER BY category_id");
@@ -22,15 +23,22 @@ protected $db = null;
 		return false;
 	}
 	
+	/**
+	* Если сессия есть, вернем идентификатор пользователя
+	*/
 	public function checkLogged()
     {
-        // Если сессия есть, вернем идентификатор пользователя
+        
         if (isset($_SESSION['users'])) {
             return $_SESSION['users'];
         }
 
         header("Location: ?/admin/login");
     }
+	
+	/**
+	* Проверяем, есть ли для данного вопроса ответ
+	*/
 	
 	public function checkResponse($request_id){
 	

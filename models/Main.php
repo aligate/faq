@@ -6,7 +6,7 @@ class Main extends Model
 {
 	
 	/**
-	* Получение всех всех вопросов
+	* Получение всех опубликованных тем, вопросов и ответов
 	* @return array
 	*/
 	public function findAll()
