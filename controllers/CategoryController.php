@@ -12,7 +12,7 @@ class CategoryController extends CoreController{
 		
 	}
 	/**
-	*	показ всех категорий
+	*	все темы 
 	*/
     public function getList()
 	{
@@ -26,7 +26,7 @@ class CategoryController extends CoreController{
     }
 
 	/**
-	*	добовление категории
+	*	добавление темы
 	*/
     public function postAdd($params, $post)
 	{
@@ -40,7 +40,7 @@ class CategoryController extends CoreController{
     }
 	
 	/**
-	* удаление категории
+	* удаление темы
 	*/
 	public function getDelete($params)
 	{
